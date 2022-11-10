@@ -6,6 +6,8 @@ import com.kraievskyi.lection1.exception.CustomException;
 import com.kraievskyi.lection1.service.string.StringService;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -14,10 +16,12 @@ class StringServiceImplTest {
     private static StringService stringService;
     private static LinkedHashMap<String, Long> expected;
     private static List<String> list;
+    private static List<String> emptyList;
 
     @BeforeAll
     static void setUp() {
         stringService = new StringServiceImpl();
+        emptyList = new ArrayList<>();
         list = List.of("#BWM #BMW", "#PRAY FOR UKRAINE", "#SAVE MARIUPOL",
                 "#PRAY FOR UKRAINE", "#SAVE MARIUPOL", "#PRAY FOR UKRAINE", "#BWM #BMW",
                 "#APPLE", "#BWM #BMW", "#SAVE MARIUPOL", "#BWM #BMW", "#BWM #BMW",
@@ -38,7 +42,7 @@ class StringServiceImplTest {
     @Test
     void emptyListIstNot_Ok() {
         CustomException thrown = assertThrows(CustomException.class, () ->
-                stringService.topFiveHashTeg(list), "CustomException was expected");
+                stringService.topFiveHashTeg(emptyList), "CustomException was expected");
         assertEquals("List length must be grater than 0", thrown.getMessage());
     }
 }

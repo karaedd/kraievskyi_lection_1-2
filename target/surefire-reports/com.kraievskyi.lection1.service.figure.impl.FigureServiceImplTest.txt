@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.kraievskyi.lection1.service.figure.impl.FigureServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in com.kraievskyi.lection1.service.figure.impl.FigureServiceImplTest
