@@ -6,23 +6,32 @@ import com.kraievskyi.lection1.model.Cube;
 import com.kraievskyi.lection1.model.Figure;
 import com.kraievskyi.lection1.model.Cylinder;
 import com.kraievskyi.lection1.service.figure.FigureService;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 
 class FigureServiceImplTest {
 
+    private static final Figure cube = new Cube(3);
+    private static final Figure cylinder = new Cylinder(4, 3);
+    private static final Figure ball = new Ball(4);
+    private static FigureService figureService;
+    private static List<Figure> figureList;
+    private static List<Figure> expected;
+
+    @BeforeAll
+    static void setUp() {
+        figureService = new FigureServiceImpl();
+        figureList = List.of(new Ball(4), new Cube(3),
+                new Cylinder(4, 3));
+        cube.setVolume(27);
+        expected = List.of(cube, cylinder, ball);
+        cylinder.setVolume(150);
+        ball.setVolume(268);
+    }
+
     @Test
     void sortByVolume_Ok() {
-        FigureService figureService = new FigureServiceImpl();
-        List<Figure> figureList = List.of(new Ball(4), new Cube(3),
-                new Cylinder(4, 3));
-        Figure cube = new Cube(3);
-        Figure cylinder = new Cylinder(4, 3);
-        Figure ball = new Ball(4);
-        cube.setVolume(27.0);
-        cylinder.setVolume(150.79644737231007);
-        ball.setVolume(268.082573106329);
-        List<Figure> expected = List.of(cube, cylinder, ball);
         assertEquals(figureService.sortByVolume(figureList), expected);
     }
 }

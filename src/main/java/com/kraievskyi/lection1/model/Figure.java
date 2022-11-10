@@ -6,7 +6,7 @@ import lombok.Setter;
 public abstract class Figure {
     @Setter
     @Getter
-    private double volume;
+    private int volume;
 
-    public abstract double calculateVolume();
+    public abstract int calculateVolume();
 }

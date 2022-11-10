@@ -19,7 +19,7 @@ public class Main {
         StringService stringService = new StringServiceImpl();
         FigureService figureService = new FigureServiceImpl();
 
-        int[] array = new int[]{1,2,-3,4,0,-234,432,32,-1,2,1,99};
+        int[] array = new int[] {1, 2, -3, 4, 0, -234, 432, 32, -1, 2, 1, 99};
         List<String> list = List.of("#PRAY FOR UKRAINE", "#BWM #BMW", "#SAVE MARIUPOL",
                 "#PRAY FOR UKRAINE", "#SAVE MARIUPOL", "#BWM #BMW", "#BWM #BMW", "#LOVE", "#WAR",
                 "#SAVE MARIUPOL", "#PRAY FOR UKRAINE", "#APPLE", "#BWM #BMW", "#APPLE", "#LOVE",
