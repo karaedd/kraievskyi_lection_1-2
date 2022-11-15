@@ -19,8 +19,8 @@ public class Cylinder extends Figure {
     }
 
     @Override
-    public int calculateVolume() {
-        super.setVolume((int) (Math.PI * radius * (Math.pow(height, 2))));
+    public double calculateVolume() {
+        super.setVolume((Math.PI * radius * (Math.pow(height, 2))));
         return super.getVolume();
     }
 

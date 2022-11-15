@@ -17,8 +17,8 @@ public class Cube extends Figure {
     }
 
     @Override
-    public int calculateVolume() {
-        super.setVolume((int) Math.pow(edge, 3));
+    public double calculateVolume() {
+        super.setVolume(Math.pow(edge, 3));
         return super.getVolume();
     }
 

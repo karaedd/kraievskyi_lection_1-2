@@ -18,8 +18,8 @@ public class Ball extends Figure {
     }
 
     @Override
-    public int calculateVolume() {
-        super.setVolume((int) ((4.0 / 3.0) * Math.PI * (Math.pow(radius, 3))));
+    public double calculateVolume() {
+        super.setVolume(((4.0 / 3.0) * Math.PI * (Math.pow(radius, 3))));
         return super.getVolume();
     }
 
